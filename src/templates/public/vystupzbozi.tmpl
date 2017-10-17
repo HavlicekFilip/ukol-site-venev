@@ -1,0 +1,16 @@
+{% extends "shared/layout.tmpl" %}
+
+{% block title %}vypis {% endblock %}
+
+{% block content %}
+  <h3>Vypis zbozi.</h3>
+ <table>
+    {% for n in pole %}
+        <tr><td class="col-sm-6">{{ n.nazev }}</td>
+        <td class="col-sm-6">{{ n.cena }}</td>
+        <td class="col-sm-6">{{ n.vyrazen}}</td>
+        <td class="col-sm-6"><a href="/smazZbozi/{{ n.id }}">Smaz</a></td>
+        </tr>
+    {% endfor %}
+    </table>
+{% endblock %}

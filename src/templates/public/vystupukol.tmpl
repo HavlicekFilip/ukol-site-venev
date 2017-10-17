@@ -1,0 +1,16 @@
+{% extends "shared/layout.tmpl" %}
+
+{% block title %}vypis {% endblock %}
+
+{% block content %}
+  <h3>VystupUkol.</h3>
+ <table>
+    {% for n in pole %}
+        <tr><td>{{ n.jmeno }}</td>
+        <td>{{ n.prijmeni }}</td>
+        <td>{{ n.datum}}</td>
+        <td><a href="/smazUkol/{{ n.id }}">Smaz</a></td></tr>
+     {% endfor %}
+     <tr><td><a href="/ukol">Ukol</a></td></tr>
+    </table>
+{% endblock %}
